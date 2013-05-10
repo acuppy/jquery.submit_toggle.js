@@ -1,9 +1,5 @@
 == jQuery Submit Toggle
 
-    $('#submit-button').submitToggle()
-
-== jQuery Submit Toggle
-
 jQuery submit toggle is a simple way to enable/disable form submit buttons and gracefully replace the text
 
 == Usage
