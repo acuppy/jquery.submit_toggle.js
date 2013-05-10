@@ -64,7 +64,7 @@
 
       function toggleStatus(){
        if($submitButton.hasClass('submitToggleEnabled')){
-          $submitButton.prop('disabled')
+          $submitButton.prop('disabled', false)
         } else if($submitButton.hasClass('submitToggleDisabled')){
           $submitButton.prop('disabled', true)
         } 
