@@ -4,6 +4,10 @@ jQuery submit toggle is a simple way to enable/disable form submit buttons and g
 
 == Usage
 
+The submit toggle uses the data attribute to hold the submit disable text.
+
+    <input type="submit" data-submit-toggle-text="Submitting..." name="submit" value="Submit" />
+
 Bind the submitToggle action to a jQuery selected button.
 
     $('#submit-button').submitToggle({
