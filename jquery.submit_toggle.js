@@ -14,6 +14,8 @@
       }, options)
 
       var $form = $submitButton.closest(options.form)
+      
+      $submitButton.addClass('submitToggleEnabled')
 
       $form.on('submit', function(){
         toggleToDisabled()
