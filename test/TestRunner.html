@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Runner</title>
+
+    <!-- include spec files here... -->
+    <script type="text/javascript" src="support/jquery-1.9.1.min.js"></script>
+
+    <!-- include source files here... -->
+    <script type="text/javascript" src="../jquery.submit_toggle.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <form id="submit-button-test" action="/" method="post">
+        <input class="submit-toggle" type="submit" name="Submit" value="Submit" data-submit-toggle-text="Submitting..." />
+        <input class="submit-toggle" type="submit" name="Submit2" value="Submit2" data-submit-toggle-text="Submitting2..." />
+      </form>
+
+      <form id="submit-button-test2" action="/" method="post">
+        <input class="submit-toggle2" type="submit" name="Submit" value="Submit" data-submit-toggle-text="Submitting..." />
+      </form>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        $(".submit-toggle").submitToggle();
+        $(".submit-toggle2").submitToggle();
+      })
+    </script>
+  </body>
+</html>

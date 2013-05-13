@@ -4,8 +4,6 @@
     
     return this.each(function(){
 
-      var $submitButton = $(this)
-
       options = $.extend({
         form:        'form',
         waitForAjax: false,
@@ -13,12 +11,11 @@
         onDisable:   false
       }, options)
 
-      var $form = $submitButton.closest(options.form)
-      
-      $submitButton.addClass('submitToggleEnabled')
+      var $submitButton = $(this).addClass('submitToggleEnabled')
 
-      $form.on('submit', function(){
+      $submitButton.on('click', function(){
         toggleToDisabled()
+        $submitButton.closest(options.form).submit();
       });
 
       if(options.waitForAjax === true){
