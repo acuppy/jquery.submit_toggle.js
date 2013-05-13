@@ -68,7 +68,7 @@
       }
 
       function toggleSubmitToggleText(){
-        var submitToggleText = $submitButton.data('submit-toggle-text')
+        var submitToggleText = $submitButton.data('submit-toggle-text') || $submitButton.attr('submit-toggle-text')
 
         if(!!submitToggleText){
           $submitButton.data('submit-toggle-text', $submitButton.val())
