@@ -19,7 +19,7 @@
       });
 
       if(options.waitForAjax === true){
-        $(options.form).ajaxComplete(function(){
+        $(document).ajaxComplete(function(){
           toggleToEnabled()
         });
       }
