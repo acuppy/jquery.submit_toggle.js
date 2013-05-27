@@ -7,8 +7,8 @@
       options = $.extend({
         form:        'form',
         waitForAjax: false,
-        onEnable:    false,
-        onDisable:   false
+        onEnable:    $.noop,
+        onDisable:   $.noop
       }, options)
 
       var $submitButton = $(this).addClass('submitToggleEnabled')
@@ -45,9 +45,9 @@
 
       function processCallbacks(){
         if($submitButton.hasClass('submitToggleEnabled')){
-          if(typeof options.onEnable == 'function') options.onEnable.call($submitButton);
+          if( $.isFunction(options.onEnable) ) options.onEnable.call($submitButton);
         } else if($submitButton.hasClass('submitToggleDisabled')){
-          if(typeof options.onDisable == 'function') options.onDisable.call($submitButton);
+          if( $.isFunction(options.onDisable) ) options.onDisable.call($submitButton);
         }
       }
 
