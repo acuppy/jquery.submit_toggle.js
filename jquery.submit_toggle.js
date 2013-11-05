@@ -5,10 +5,12 @@
     return this.each(function(){
 
       options = $.extend({
-        form:        'form',
-        waitForAjax: false,
-        onEnable:    $.noop,
-        onDisable:   $.noop
+        form:            'form',
+        waitForAjax:     false,
+        onEnable:        $.noop,
+        onDisable:       $.noop,
+        onToggle:        $.noop,
+        disableWithText: null
       }, options)
 
       var $submitButton = $(this).addClass('submitToggleEnabled')
@@ -37,7 +39,7 @@
       }
 
       function processToggle(){
-        toggleSubmitToggleText()
+        toggleSubmitDisableText()
         toggleStatusClass()
         toggleStatus()
         processCallbacks()
@@ -48,6 +50,10 @@
           if( $.isFunction(options.onEnable) ) options.onEnable.call($submitButton);
         } else if($submitButton.hasClass('submitToggleDisabled')){
           if( $.isFunction(options.onDisable) ) options.onDisable.call($submitButton);
+        }
+
+        if( $.isFunction(options.onToggle) ) {
+          options.onToggle.call($submitButton);
         }
       }
 
@@ -67,11 +73,11 @@
         } 
       }
 
-      function toggleSubmitToggleText(){
-        var submitToggleText = $submitButton.data('submit-toggle-text') || $submitButton.attr('submit-toggle-text')
+      function toggleSubmitDisableText(){
+        var submitToggleText = $submitButton.data('submit-disable-text') || $submitButton.attr('submit-disable-text') || options.disableWithText
 
         if(!!submitToggleText){
-          $submitButton.data('submit-toggle-text', $submitButton.val())
+          $submitButton.data('submit-disable-text', $submitButton.val())
           $submitButton.val(submitToggleText)
         }
       }
