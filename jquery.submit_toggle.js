@@ -10,7 +10,7 @@
         onEnable:        $.noop,
         onDisable:       $.noop,
         onToggle:        $.noop,
-        disableWithText: null
+        disableText: null
       }, options)
 
       var $submitButton = $(this).addClass('submitToggleEnabled')
@@ -74,7 +74,7 @@
       }
 
       function toggleSubmitDisableText(){
-        var submitToggleText = $submitButton.data('submit-disable-text') || $submitButton.attr('submit-disable-text') || options.disableWithText
+        var submitToggleText = $submitButton.data('disable-text') || $submitButton.attr('disable-text') || options.disableText
 
         if(!!submitToggleText){
           $submitButton.data('submit-disable-text', $submitButton.val())
