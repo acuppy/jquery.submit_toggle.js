@@ -30,7 +30,6 @@ Bind the submitToggle action to a jQuery selected button.
         // control the button when disabling or enabling
       },
 
-      // Set disable text globally
-      // The will be overwritten by button data or attribute options (above)
+      // Set disable text globally.  This will be overwritten by button data or attribute options (above)
       disableText: null
     });
