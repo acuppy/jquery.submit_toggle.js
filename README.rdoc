@@ -1,4 +1,5 @@
 == jQuery Submit Toggle
+{<img src="https://codeclimate.com/github/acuppy/jquery.submit_toggle.js.png" />}[https://codeclimate.com/github/acuppy/jquery.submit_toggle.js]
 
 jQuery submit toggle is a simple way to enable/disable form submit buttons and gracefully replace the text
 
